@@ -1,14 +1,16 @@
-import React, { useState } from "react";
-import list from "../data";
-import Cards from "./card";
-import "../styles/amazon.css";
+import React,{useState} from 'react';
+import list from '../data';
+import '../styles/amazon.css';
+import Cards from './components/Card';
 
-const Amazon = ({ handleClick }) => {
+const Amazon = ({handleClick}) => {
   return (
     <section>
-      {list.map((item) => (
-        <Cards key={item.id} item={item} handleClick={handleClick} />
-      ))}
+        {
+            list.map((item)=>(
+                <Cards item={item} key={item.id} handleClick={handleClick} />
+            ))
+        }
     </section>
   );
 };
